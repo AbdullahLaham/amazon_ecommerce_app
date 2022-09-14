@@ -6,7 +6,8 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import {Store} from '../utils/Store';
 
-function reducer(state, action) {
+const OrderHistory = () => {
+    function reducer(state, action) {
     switch (action.type) {
       case 'FETCH_REQUEST':
         return { ...state, loading: true, error: '' };
@@ -18,7 +19,6 @@ function reducer(state, action) {
         state;
     }
   }
-const orderHistory = () => {
     //router
     const router = useRouter();
     const {state: {userInfo}} = useContext(Store);
@@ -95,4 +95,4 @@ const orderHistory = () => {
   )
 }
 
-export default orderHistory
+export default OrderHistory
