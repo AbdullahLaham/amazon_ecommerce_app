@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import {CircularProgress, Typography, Grid} from '@mui/material';
+import {CircularProgress, Typography, Grid, Alert} from '@mui/material';
 import Layout from '../components/Layout';
 import {client} from '../utils/client';
 import {useEffect, useState} from 'react';

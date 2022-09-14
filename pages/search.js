@@ -207,8 +207,8 @@ const Search = () => {
                 loading ? <CircularProgress /> : error ? <Alert>{error}</Alert> : (
                     <Grid container spacing={3} >
                         {
-                            products?.map(product => {
-                                return <Grid item >
+                            products?.map((product, i) => {
+                                return <Grid item key={i} >
                                     <ProductItem  product={product} />
                                 </Grid>
                             })

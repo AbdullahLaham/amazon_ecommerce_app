@@ -36,7 +36,7 @@ const ProductDetails = ({slug}) => {
     
   }
   fetchData();
-}, [])
+}, [currenState, slug])
 console.log('rere', currenState.product, 'roro', cart.cartItems)
 // add to cart
 const addToCartHandler = () => {

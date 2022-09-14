@@ -122,7 +122,7 @@ const Layout = ({title, description, children}) => {
             }
         }
         fetchCategories();
-    }, []);
+    }, [enqueueSnackbar]);
     const queryChangeHandler = (e) => {
         setQuery(e.target.value);
     }

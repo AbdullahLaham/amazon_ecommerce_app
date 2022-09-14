@@ -71,7 +71,7 @@ const Order = ({params}) => {
         if (!order?._id) {
             fetchOrder();
         } 
-    }, [router, orderId, userInfo]);
+    }, [router, orderId, userInfo, order?._id]);
 
     const loadStripeScript = async () => {
         
