@@ -44,11 +44,11 @@ const LoginScereen = () => {
         </Typography>
         <List>
           <ListItem>
-            <Controller name='email' control={control} defaultValue='' rules={{required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,}} render={({field}) => <TextField varient='outlined' fullWidth id="email" label="Email" inputProps={{type: 'email'}} error={Boolean(errors.email)} helperText={errors.email ? errors.email.type == 'pattern' ? 'Email is not valid' : 'Email is required' : ''} {...field}></TextField>}>
+            <Controller name='email' control={control} defaultValue='' rules={{required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,}} render={({field}) => <TextField varient='outlined' fullWidth id="email" label="Email" inputProps={{type: 'email'}} error={Boolean(errors?.email)} helperText={errors?.email ? errors?.email?.type == 'pattern' ? 'Email is not valid' : 'Email is required' : ''} {...field}></TextField>}>
             </Controller>
           </ListItem>
           <ListItem>
-            <Controller name='password' control={control} defaultValue='' rules={{required: true, minLength: 6,}} render={({field}) => <TextField varient='outlined' fullWidth id="password" label="Password" inputProps={{type: 'password'}} error={Boolean(errors.password)} helperText={errors.password ? errors.password.type == 'minLength' ? 'password length is less than 6' : 'Password is required' : ''} {...field}></TextField>}>
+            <Controller name='password' control={control} defaultValue='' rules={{required: true, minLength: 6,}} render={({field}) => <TextField varient='outlined' fullWidth id="password" label="Password" inputProps={{type: 'password'}} error={Boolean(errors.password)} helperText={errors?.password ? errors?.password?.type == 'minLength' ? 'password length is less than 6' : 'Password is required' : ''} {...field}></TextField>}>
             </Controller>
           </ListItem>
           <ListItem >

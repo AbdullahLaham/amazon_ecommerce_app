@@ -70,7 +70,7 @@ const CartScreen = () => {
                             </Select></TableCell>
                           <TableCell><Typography>$ {item?.price}</Typography></TableCell>
                           <TableCell>
-                            <Button varient='contained' color='secondary' onClick={() => removeItemHandler(item)}> 
+                            <Button variant='contained' color='secondary' onClick={() => removeItemHandler(item)}> 
                               <DeleteIcon />
                             </Button>
                           </TableCell>
@@ -89,7 +89,7 @@ const CartScreen = () => {
                       </Typography>
                     </ListItem>
                     <ListItem>
-                      <Button onClick={() => {router.push('/shipping')}} fullWidth color='primary' varient='contained' sx={{width: '100%'}}>
+                      <Button onClick={() => {router.push('/shipping')}} fullWidth color='primary' variant='contained' sx={{width: '100%'}}>
                          Checkout     
                       </Button>
                     </ListItem>
