@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Form from '../components/Form';
 import {useRouter} from 'next/router';
 import { useSnackbar } from 'notistack';
+import jsCookie from 'js-cookie';
 import { Store } from '../utils/Store';
 import { Alert, CircularProgress, Typography,TextField ,  Box, Link, Grid, ListItem, List, Rating, Card, Button } from '@mui/material';
 import NextLink from 'next/link';
@@ -39,7 +40,7 @@ const RegisterScereen = () => {
         router.push(redirect || '/');
       }
       catch(err) {
-        enqueueSnackbar(err.response.data.message ? err.response.data.message : err.message, {variant: 'error'});
+        enqueueSnackbar(err?.response?.data?.message ? err.response.data.message : err.message, {variant: 'error'});
         // console.log(err)
       }
     }

@@ -8,7 +8,7 @@ const clientSideEmotionCache = createCache({ key: 'css' });
 
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache, }) {
   return (
-    <CacheProvider value={emotionCache}>
+    <CacheProvider value={emotionCache} >
       <SnackbarProvider
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       >

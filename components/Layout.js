@@ -43,6 +43,7 @@ const Layout = ({title, description, children}) => {
     // userInfo = JSON.parse(userInfo)
     console.log(userInfo)
     // console.log(cart.cartItems.length)
+    // navigate function
     const {darkMode} = state;
     const router = useRouter();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -64,7 +65,7 @@ const Layout = ({title, description, children}) => {
         jsCookie.remove('shippingAddress');
         jsCookie.remove('paymentMethod');
         dispatch({type: 'USER_LOGOUT'})
-        router.push('/');
+        router.push('/login', {replace: true})
     }
     const theme = createTheme({
         typography: {
@@ -123,6 +124,12 @@ const Layout = ({title, description, children}) => {
         }
         fetchCategories();
     }, [enqueueSnackbar]);
+
+    useEffect(() => {
+        if (!userInfo?.name) {
+            router.push('/login', {replace: true})
+        }
+    }, [])
     const queryChangeHandler = (e) => {
         setQuery(e.target.value);
     }
