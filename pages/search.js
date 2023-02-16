@@ -53,6 +53,7 @@ const Search = () => {
         }
 
         fetchCategories();
+
         const fetchData = async () => {
             try {
                 let query1 = '*[_type == "product"';
@@ -73,6 +74,7 @@ const Search = () => {
                 }
                 let order = '';
                 if (sort !== 'default') {
+                    
                     if (sort == 'lowest') order = '| order(price asc)';
                     if (sort == 'highest') order = '| order(price desc)';
                     if (sort == 'toprated') order = '| order(rating desc)';
@@ -86,6 +88,7 @@ const Search = () => {
                 setState({error: err.message, loading: false,})
             }
         }
+
         fetchData();
     }, [category, price, query, rating, sort]);
     const filterSearch = ({
@@ -178,6 +181,8 @@ const Search = () => {
                 </ListItem>
             </List>
         </Grid>
+
+        
         <Grid item md={9} >
             <Grid container justifyContent='space-between' alignItems="center" >
             <Grid item>

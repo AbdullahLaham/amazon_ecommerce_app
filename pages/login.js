@@ -17,9 +17,11 @@ const LoginScereen = () => {
   const router = useRouter();
   // redirect
   const {redirect} = router.query;
+  
   useEffect(() => {
     if (userInfo?.name) router.push(redirect || '/');
-  }, [router, userInfo, redirect])
+  }, [router, userInfo, redirect]);
+
     const { enqueueSnackbar } = useSnackbar();
     const {handleSubmit, control, formState: {errors},} = useForm();
     

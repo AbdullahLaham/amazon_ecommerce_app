@@ -126,10 +126,11 @@ const Layout = ({title, description, children}) => {
     }, [enqueueSnackbar]);
 
     useEffect(() => {
-        if (!userInfo?.name) {
-            router.push('/login', {replace: true})
+        if (!userInfo?.name ) {
+            // router.push('/login', {replace: true})
         }
-    }, [])
+    }, []);
+
     const queryChangeHandler = (e) => {
         setQuery(e.target.value);
     }

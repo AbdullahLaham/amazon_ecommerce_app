@@ -13,10 +13,11 @@ export default function Home() {
     loading: false,
   });
   const {loading, error, products} = state;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const products = await client.fetch(`*[_type == "product"]`)
+        const products = await client.fetch(`*[_type == "product"]`);
         setState({...state, products, loading: false});
       }
       catch(err) {
@@ -24,7 +25,8 @@ export default function Home() {
       }
     }
     fetchData();
-  }, [])
+  }, []);
+
   return (
     <div className=''>
       <Layout>

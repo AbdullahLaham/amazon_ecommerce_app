@@ -22,7 +22,8 @@ const PaymentScreen = () => {
         } else {
             setPaymentMethod(jsCookie.get('paymentMethod') || '');
         }
-    }, [router, shippingAddress])
+    }, [router, shippingAddress]);
+    
     const submitHandler = (e) => {
         e.preventDefault();
         if (!paymentMethod) {

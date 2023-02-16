@@ -19,10 +19,12 @@ const RegisterScereen = () => {
   const {redirect} = router.query;
   const {state, dispatch} = useContext(Store);
   const {userInfo} = state;
-  console.log('ll', userInfo)
+  console.log('ll', userInfo);
+  
   useEffect(() => {
     if (userInfo?.name) router.push(redirect || '/');
-  }, [router, userInfo, redirect])
+  }, [router, userInfo, redirect]);
+
     const {handleSubmit, control, formState: {errors},} = useForm();
     const submitHandler = async ({name, email, password, confirmPassword}) => {
       console.log({name, email, password, confirmPassword})
